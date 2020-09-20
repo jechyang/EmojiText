@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: emojiatlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b20d442296aa5094fa63af5ed6676316, type: 3}
+    totalSpriteSurfaceArea: 480000
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6ca3f3704d7997843aa516f688e57ada, type: 3}
+  - {fileID: 21300000, guid: 98a44fb03a7b1ee42b09ecf751129a44, type: 3}
+  - {fileID: 21300000, guid: 3e1eaa61144476142b09b2aa2ded30cd, type: 3}
+  - {fileID: 21300000, guid: ef2531f1dfda4e8478bcff82ef3b7fa2, type: 3}
+  - {fileID: 21300000, guid: 6ef8ed24103ddd94b82f64a8d2755aa8, type: 3}
+  - {fileID: 21300000, guid: 8b73e185d84ba734e8b95fbdd81724a6, type: 3}
+  - {fileID: 21300000, guid: b04e41f8d2d9e9b469d13beabf99d3e4, type: 3}
+  - {fileID: 21300000, guid: c3a714bafc7ac8e48b8b85a9f1107f0c, type: 3}
+  - {fileID: 21300000, guid: 36e458bc0a470d54b94155eab83fc919, type: 3}
+  - {fileID: 21300000, guid: 8919052d24f6e084b96bde2f4aad3593, type: 3}
+  - {fileID: 21300000, guid: d7d3a98de4dfb064288cabd261adb8ad, type: 3}
+  - {fileID: 21300000, guid: a95e7e8e573bbee4ba23d67620402712, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 11
+  - 1
+  - 2
+  - 5
+  - 6
+  - 12
+  - 7
+  - 9
+  - 4
+  - 8
+  - 10
+  - 3
+  m_Tag: emojiatlas
+  m_IsVariant: 0
