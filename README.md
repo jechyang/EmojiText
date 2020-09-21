@@ -68,13 +68,13 @@ EmojiTextSprite和EmojiTextHref，都是需要功能的时候才需要挂载，�
 
 ### 输入格式相关
 
-这里标签的统一格式为**<#[A-Z] (params)>**
+这里标签的统一格式为:**<#[A-Z] (params)>**
 
 * Emoji的格式为 :**<#E size name>**
 
   例如Emoji表情的话就是<#E 30 1> 注意这里的空格，是代表分隔符，后面的30代表的是emoji的size,后面的1即为spirte的name
 
-* 超链接的输入格式为**<#H content eventId>**
+* 超链接的输入格式为:**<#H content eventId>**
 
   content即为要显示的内容，eventId是可选的，如果有的话就需要在代码中绑定对应的事件，注册事件代码如下
 
