@@ -200,9 +200,16 @@ public class EmojiText : Text, IPointerClickHandler
         }
 #endif
         var vertices = GetCurrentVertices(toFill);
-        DrawSprite(toFill, vertices);
-        DrawHref(toFill, vertices);
-        ClearQuadShowError(toFill);
+        try
+        {
+            DrawSprite(toFill, vertices);
+            DrawHref(toFill, vertices);
+            ClearQuadShowError(toFill);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
     }
     
     private bool CheckIsNewCalculateWay()
@@ -291,8 +298,12 @@ public class EmojiText : Text, IPointerClickHandler
         Vector2[] uvs = new Vector2[4];
         foreach (EmojiInfo info in _curentTagParser.EmojiInfos)
         {
-            var emojiIndex = info.EmojiName;
-            var sprite = EmojiSpriteComp.GetSpriteByName(emojiIndex);
+            var emojiName = info.EmojiName;
+            var sprite = EmojiSpriteComp.GetSpriteByName(emojiName);
+            if (sprite == null)
+            {
+                throw new Exception($"图集里无法找到指定name:{emojiName}的sprite");
+            }
             var uv = DataUtility.GetOuterUV(sprite);
             var lineCount = info.LineCount;
             var firstVertexIndex = (info.Index + 1 - lineCount) * 4 - 1;

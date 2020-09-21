@@ -27,7 +27,7 @@ public class NewVersionTagParser : ITagParser
             }
             catch (Exception e)
             {
-                Debug.LogError("标签解析失败，请查看标签格式");
+                Debug.LogError(e.Message);
                 _emojiInfos.Clear();
                 _hrefInfos.Clear();
             }
@@ -62,18 +62,25 @@ public class NewVersionTagParser : ITagParser
         int currentJumpCount = 0;
         foreach (Match match in matches)
         {
-            char typeChar = char.Parse(match.Groups[1].Value);
-            switch (typeChar)
+            try
             {
-                case 'E':
-                    currentJumpCount += ParseEmojiText(match, currentJumpCount);
-                    break;
-                case 'H':
-                    currentJumpCount += ParseHrefText(match, currentJumpCount);
-                    break;
-                default:
-                    Debug.LogError($"无法解析的type:{typeChar}");
-                    break;
+                char typeChar = char.Parse(match.Groups[1].Value);
+                switch (typeChar)
+                {
+                    case 'E':
+                        currentJumpCount += ParseEmojiText(match, currentJumpCount);
+                        break;
+                    case 'H':
+                        currentJumpCount += ParseHrefText(match, currentJumpCount);
+                        break;
+                    default:
+                        Debug.LogError($"无法解析的type:{typeChar}");
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"{match.Groups[0].Value}解析标签失败，请检查格式");
             }
         }
     }
@@ -81,7 +88,7 @@ public class NewVersionTagParser : ITagParser
     private int ParseHrefText(Match match,int currentJumpCount)
     {
         var paramsStr = match.Groups[2].Value;
-        var paramsArr = paramsStr.Split(' ');
+        var paramsArr = paramsStr.Split(Consts.TagSplitChar);
         var showResult = paramsArr[0];
         int eventId = 999;
         if (paramsArr.Length > 1)
@@ -100,7 +107,7 @@ public class NewVersionTagParser : ITagParser
     private int ParseEmojiText(Match match, int currentJumpCount)
     {
         var paramsStr = match.Groups[2].Value;
-        var paramsArr = paramsStr.Split(' ');
+        var paramsArr = paramsStr.Split(Consts.TagSplitChar);
         int size = int.Parse(paramsArr[0]);
         string emojiName = paramsArr[1];
         if (string.IsNullOrEmpty(emojiName))

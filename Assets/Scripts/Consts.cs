@@ -7,4 +7,6 @@ public class Consts
 {
     private static readonly string _tagRegexStr = @"<#([A-Z]) (.+?)>";
     public  static readonly Regex TagRegex = new Regex(_tagRegexStr,RegexOptions.Singleline);
+
+    public static char TagSplitChar = ' ';
 }

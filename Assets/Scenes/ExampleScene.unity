@@ -251,7 +251,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<#E 32 2>ddsadddddsasasdasdassa\n<#H \u6D4B\u8BD5href 1>"
+  m_Text: "<#E 30 1>ssdsddsadasdasdasdasdasdasdasdadaddsa\ndddsasasdasdsadsasd\ndassa<#H
+    \u6D4B\u8BD5href 1>"
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
