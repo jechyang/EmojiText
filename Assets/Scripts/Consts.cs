@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Consts 
 {
-    private static readonly string _tagRegexStr = @"<#([A-Z]) (.+?)>";
+    public static readonly char TagSplitChar = ' ';
+    private static readonly string _tagRegexStr = $@"<#([A-Z]){TagSplitChar}(.+?)>";
     public  static readonly Regex TagRegex = new Regex(_tagRegexStr,RegexOptions.Singleline);
-
-    public static char TagSplitChar = ' ';
 }
